@@ -131,6 +131,8 @@ class ViewController: UIViewController {
         
         // セグエを使用して画面を遷移
         performSegue(withIdentifier: "result", sender: image)
+        
+        self.timer.invalidate()
     }
 }
 
