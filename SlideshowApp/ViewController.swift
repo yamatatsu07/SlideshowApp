@@ -132,7 +132,13 @@ class ViewController: UIViewController {
         // セグエを使用して画面を遷移
         performSegue(withIdentifier: "result", sender: image)
         
-        self.timer.invalidate()
+        if self.timer != nil {
+            self.timer.invalidate()   // 現在のタイマーを破棄する
+            self.timer = nil
+            playBack.setTitle("再生", for: .normal)
+            nextSlide.isEnabled = true // ボタン有効
+            backSlide.isEnabled = true // ボタン有効
+        }
     }
 }
 
